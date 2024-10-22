@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoGeneroTable extends Migration
+class CreateTipoCategoriaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTipoGeneroTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_genero', function (Blueprint $table) {
+        Schema::create('tipo_categoria', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
-            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateTipoGeneroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_genero');
+        Schema::dropIfExists('tipo_categoria');
     }
 }

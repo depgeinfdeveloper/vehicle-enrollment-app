@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoColorTable extends Migration
+class  CreateTipoColorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,8 @@ class CreateTipoColorTable extends Migration
     {
         Schema::create('tipo_color', function (Blueprint $table) {
             $table->id();
+            $table->string('descripcion');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

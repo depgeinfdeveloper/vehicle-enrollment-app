@@ -15,6 +15,9 @@ class CreateTipoCategoriaTable extends Migration
     {
         Schema::create('tipo_categoria', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo');
+            $table->string('descripcion');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

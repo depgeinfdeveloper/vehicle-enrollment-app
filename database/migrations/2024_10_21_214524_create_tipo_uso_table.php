@@ -15,6 +15,8 @@ class CreateTipoUsoTable extends Migration
     {
         Schema::create('tipo_uso', function (Blueprint $table) {
             $table->id();
+            $table->string('descripcion');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }
