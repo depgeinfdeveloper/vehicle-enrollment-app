@@ -1,0 +1,80 @@
+.slick-dots li button:before{
+    content: "";
+}
+.slick-slide > div {
+    margin: 0px 16px 0;
+}
+#chart__sell,#chart__visitor {
+    display: flex;
+    align-items: end;
+}
+.circle-count{
+    position: relative;
+}
+.circle-count .number{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+.circle-count svg {
+    position: relative;
+    width: 74px;
+    height: 74px;
+    transform: rotate(-90deg);
+}
+
+.circle-count svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 5;
+}
+.circle-count:nth-child(1) svg circle:last-of-type {
+    stroke: rgba(245, 57, 248, 1);
+}
+
+.circle-count:nth-child(2) svg circle:last-of-type {
+    stroke: rgba(242, 153, 74, 1);
+}
+.circle-count:nth-child(3) svg circle:last-of-type {
+    stroke: rgba(235, 87, 87, 1);
+}
+
+.circle-count svg circle:last-of-type {
+    stroke-dasharray: 156px;
+    stroke-dashoffset: calc(156px - (156px * var(--percent)) / 100);
+}
+.nftmax-charts__line {
+    margin: -14px 0;
+    padding: 0 8px;
+}
+#myChart_bids_month, #myChart_earning_month{
+    height:205px ;
+}
+#myChart_bids_month #chart, #myChart_earning_month #chart{
+    transform: scale(1.08);
+}
+.nftmax__item-button--group .modal.show::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #00000085;
+}
+
+
+.overflow-style-none::-webkit-scrollbar {
+
+    display: none;
+
+}
+.overflow-style-none {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
