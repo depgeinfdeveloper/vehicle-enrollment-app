@@ -15,7 +15,16 @@ class CreateIntervencionesTable extends Migration
     {
         Schema::create('intervenciones', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha_intervencion');
+            $table->time('hora_intervencion');
+            $table->string('latitud', 20);
+            $table->string('longitud', 20);
+            $table->bigInteger('tipo_distrito_id');
+            $table->bigInteger('tipo_estado_vehiculo_id');
+            $table->bigInteger('vehiculo_id');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

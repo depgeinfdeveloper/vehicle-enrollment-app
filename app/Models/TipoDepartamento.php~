@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class TipoDepartamento extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'nombre',
+        'estado',
+    ];
+
+    // Definir si algún atributo es un tipo de dato específico (por ejemplo, booleano)
+    protected $casts = [
+        'estado' => 'boolean',
+    ];
+
+    // El modelo no tiene timestamps (created_at, updated_at) porque no están definidos en la migración
+    public $timestamps = false;
+}

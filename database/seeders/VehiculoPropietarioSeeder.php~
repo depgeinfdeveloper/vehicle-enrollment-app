@@ -1,0 +1,19 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\VehiculoFormal;
+use Illuminate\Database\Seeder;
+
+class VehiculoPropietarioSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $vehiculos = VehiculoFormal::all();
+    }
+}

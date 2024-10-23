@@ -15,7 +15,11 @@ class CreateTipoProvinciaTable extends Migration
     {
         Schema::create('tipo_provincia', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('ubigeo', 10);
+            $table->string('completo', 200);
+            $table->boolean('estado')->default(true);
+            $table->bigInteger('tipo_dep_id');
         });
     }
 

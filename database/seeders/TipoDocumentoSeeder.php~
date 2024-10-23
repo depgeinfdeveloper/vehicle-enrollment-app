@@ -1,0 +1,39 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\TipoDocumento;
+use Illuminate\Database\Seeder;
+
+class TipoDocumentoSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $documentos = [
+            "Rojo",
+            "Verde",
+            "Azul",
+            "Amarillo",
+            "Naranja",
+            "Morado",
+            "Negro",
+            "Blanco",
+            "Gris",
+            "Rosa",
+            "Cian",
+            "Marrón"
+        ];
+
+        foreach ($colores as $color) {
+            TipoDocumento::create([
+                'descripcion' => $color,
+                'estado' => 1
+            ]);
+        }
+    }
+}

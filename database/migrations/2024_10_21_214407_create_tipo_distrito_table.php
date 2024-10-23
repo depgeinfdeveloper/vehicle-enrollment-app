@@ -15,7 +15,11 @@ class CreateTipoDistritoTable extends Migration
     {
         Schema::create('tipo_distrito', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('ubigeo', 10);
+            $table->string('completo', 200);
+            $table->boolean('estado')->default(true);
+            $table->bigInteger('tipo_prov_id');
         });
     }
 

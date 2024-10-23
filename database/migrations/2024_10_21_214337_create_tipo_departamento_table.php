@@ -15,7 +15,8 @@ class CreateTipoDepartamentoTable extends Migration
     {
         Schema::create('tipo_departamento', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre');
+            $table->boolean('estado')->default(true);
         });
     }
 

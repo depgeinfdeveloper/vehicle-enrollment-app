@@ -2156,7 +2156,7 @@ var render = function render() {
     attrs: {
       type: "email",
       name: "email",
-      placeholder: "demo@gmail.com",
+      placeholder: "Ingrese su número de CIP",
       required: "required"
     },
     domProps: {

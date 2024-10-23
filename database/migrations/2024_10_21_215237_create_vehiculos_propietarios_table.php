@@ -15,6 +15,11 @@ class CreateVehiculosPropietariosTable extends Migration
     {
         Schema::create('vehiculos_propietarios', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('vehiculo_id')->unsigned();
+            $table->string('apellidos_nombres');
+            $table->string('direccion');
+            $table->string('tipo_propietario', 5);
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

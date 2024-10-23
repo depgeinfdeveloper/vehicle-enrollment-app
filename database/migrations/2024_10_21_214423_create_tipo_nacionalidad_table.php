@@ -15,6 +15,10 @@ class  CreateTipoNacionalidadTable extends Migration
     {
         Schema::create('tipo_nacionalidad', function (Blueprint $table) {
             $table->id();
+            $table->string('pais_nac');
+            $table->string('gentilicio_nac');
+            $table->string('iso_nac');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

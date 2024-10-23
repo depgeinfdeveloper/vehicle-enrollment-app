@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\TipoCategoriaVehiculo;
+use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
+
+class TipoCategoriaVehiculoSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $faker = Faker::create();
+        $categorias = ["L1", "L2", "L3", "L4", "L5", "L6", "L7"];
+
+        // Iterar sobre el array y crear una fila por cada categoría
+        foreach ($categorias as $categoria) {
+            TipoCategoriaVehiculo::create([
+                'codigo' => $categoria,
+                'descripcion' => $faker->text(),
+                'estado' => 1
+            ]);
+        }
+    }
+}

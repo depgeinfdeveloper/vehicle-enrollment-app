@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIntervencionesTipoUsoDetalleTable extends Migration
+class  CreateIntervencionesTipoUsoDetalleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,9 @@ class CreateIntervencionesTipoUsoDetalleTable extends Migration
     {
         Schema::create('intervenciones_tipo_uso_detalle', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('intervencion_id');
+            $table->bigInteger('tipo_uso_vehiculo_id');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIntervencionesInstructoresTable extends Migration
+class   CreateIntervencionesInstructoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,10 @@ class CreateIntervencionesInstructoresTable extends Migration
     {
         Schema::create('intervenciones_instructores', function (Blueprint $table) {
             $table->id();
+            $table->string('cip_pnp', 8);
+            $table->string('unidad_pnp', 150);
+            $table->bigInteger('intervencion_id');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

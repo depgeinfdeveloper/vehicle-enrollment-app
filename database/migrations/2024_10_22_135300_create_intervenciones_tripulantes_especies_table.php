@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIntervencionesTripulantesEspeciesTable extends Migration
+class  CreateIntervencionesTripulantesEspeciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,10 @@ class CreateIntervencionesTripulantesEspeciesTable extends Migration
     {
         Schema::create('intervenciones_tripulantes_especies', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('intervencion_tripulante_id');
+            $table->bigInteger('tipo_especie_id');
+            $table->text('detalle_especie');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }
