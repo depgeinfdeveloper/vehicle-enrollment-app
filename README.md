@@ -12,7 +12,8 @@
 - Clonar proyecto.
 - Instalar dependencias laravel - [composer install]().
 - Instalar dependencias npm - [npm install && npm run dev]().
-- Configurar variables de entorno - [cp .env.example .env]().
+- Crear variables de entorno - [cp .env.example .env]().
+- Configurar variables de entorno.
 - Ejecutar - [php artisan key:generate]().
 - Ejecutar - [php artisan migrate]().
 - Ejecutar - [php artisan db:seed]().
