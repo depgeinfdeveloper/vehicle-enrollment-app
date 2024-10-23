@@ -26,7 +26,7 @@ class ImagenFactory extends Factory
             'intervencion_id' => $intervencion ? $intervencion->id : null,
             'tipo_entidad_archivo_id' => $tipoEntidad ? $tipoEntidad->id : null,
             'entidad_id' => $this->getEntidadId($tipoEntidad, $intervencion, $intervencionTripulante, $licencia),
-            'path_imagen' => $this->faker->imageUrl(),
+            'path_imagen' => 'https://picsum.photos/640/480?random=' . $this->faker->randomNumber(),
             'estado' => true,
         ];
     }
