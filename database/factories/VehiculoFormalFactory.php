@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\VehiculoFormal;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Factory as Faker;
 
 class VehiculoFormalFactory extends Factory
 {
@@ -15,35 +16,62 @@ class VehiculoFormalFactory extends Factory
      */
     public function definition()
     {
+        $faker = Faker::create('es_ES');
+
+        $categorias = [
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5",
+            "L6",
+            "L7",
+            "M1",
+            "M1 - SA",
+            "M1 - SC",
+            "M1 - SD",
+            "M1 - SE",
+            "M1 - SF",
+            "M2 - C1",
+            "M2 - C2",
+            "M2 - C3",
+            "M2 - SA",
+            "M2 - SC",
+            "M2 - SD",
+            "M2 - SE",
+            "M2 - SF",
+            "M2 - SG",
+        ];
+
         return [
-            'placa' => $this->faker->unique()->bothify('??###'), // Ejemplo: AB1234
-            'altura' => $this->faker->randomFloat(2, 1.5, 3.5), // Altura en metros
-            'ancho' => $this->faker->randomFloat(2, 1.0, 2.5), // Ancho en metros
-            'anio_fabricacion' => $this->faker->year($max = 'now'), // Año de fabricación
-            'anio_modelo' => $this->faker->year($max = 'now'), // Año del modelo
-            'carga_util' => $this->faker->randomFloat(2, 500, 5000), // Carga útil en kg
-            'carroceria' => $this->faker->word, // Tipo de carrocería
-            'tipo_categoria' => $this->faker->word, // Tipo de categoría
-            'cilindrada' => $this->faker->randomNumber(3), // Cilindrada en cc
-            'tipo_color' => $this->faker->colorName, // Color
-            'combustible' => $this->faker->word, // Tipo de combustible
-            'rodante' => $this->faker->word, // Tipo de rodante
-            'longitud' => $this->faker->randomFloat(2, 3.0, 8.0), // Longitud en metros
-            'tipo_marca' => $this->faker->word, // Marca
-            'modelo' => $this->faker->word, // Modelo
-            'motor' => $this->faker->regexify('[A-Z]{3}[0-9]{3}'), // Motor
-            'num_asientos' => $this->faker->numberBetween(2, 12), // Número de asientos
-            'num_ejes' => $this->faker->numberBetween(2, 6), // Número de ejes
-            'num_pasajeros' => $this->faker->numberBetween(0, 12), // Número de pasajeros
-            'num_ruedas' => $this->faker->numberBetween(2, 18), // Número de ruedas
-            'num_series' => $this->faker->uuid, // Número de serie
-            'num_version' => $this->faker->word, // Número de versión
-            'oficina' => $this->faker->word, // Oficina asignada
-            'peso_bruto' => $this->faker->randomFloat(2, 1000, 15000), // Peso bruto en kg
-            'peso_neto' => $this->faker->randomFloat(2, 800, 12000), // Peso neto en kg
-            'potencia' => $this->faker->randomFloat(2, 50, 500), // Potencia en HP
-            'vin' => $this->faker->regexify('[A-Z0-9]{17}'), // Número VIN
-            'estado' => true, // Estado (activo/inactivo)
+            'placa' => $faker->unique()->bothify('??###'), // Ejemplo: AB1234
+            'altura' => $faker->randomFloat(2, 1.5, 3.5),
+            'ancho' => $faker->randomFloat(2, 1.0, 2.5),
+            'anio_fabricacion' => $faker->year($max = 'now'),
+            'anio_modelo' => $faker->year($max = 'now'),
+            'carga_util' => $faker->randomFloat(2, 500, 5000),
+            'carroceria' => $faker->word,
+            'tipo_categoria' => $faker->randomElement($categorias), // Selecciona un valor aleatorio del array
+            'cilindrada' => $faker->randomNumber(3),
+            'tipo_color' => $faker->colorName,
+            'combustible' => $faker->word,
+            'rodante' => $faker->word,
+            'longitud' => $faker->randomFloat(2, 3.0, 8.0),
+            'tipo_marca' => $faker->word,
+            'modelo' => $faker->word,
+            'motor' => $faker->regexify('[A-Z]{3}[0-9]{3}'),
+            'num_asientos' => $faker->numberBetween(2, 12),
+            'num_ejes' => $faker->numberBetween(2, 6),
+            'num_pasajeros' => $faker->numberBetween(0, 12),
+            'num_ruedas' => $faker->numberBetween(2, 18),
+            'num_series' => $faker->uuid,
+            'num_version' => $faker->word,
+            'oficina' => $faker->word,
+            'peso_bruto' => $faker->randomFloat(2, 1000, 15000),
+            'peso_neto' => $faker->randomFloat(2, 800, 12000),
+            'potencia' => $faker->randomFloat(2, 50, 500),
+            'vin' => $faker->regexify('[A-Z0-9]{17}'),
+            'estado' => true,
         ];
     }
 }
