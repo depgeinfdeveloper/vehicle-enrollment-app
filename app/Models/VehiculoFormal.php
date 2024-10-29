@@ -44,4 +44,9 @@ class VehiculoFormal extends Model
     protected $casts = [
         'estado' => 'boolean',
     ];
+
+    public function intervenciones()
+    {
+        return $this->hasMany(Intervencion::class, 'vehiculo_id')->where('tipo_estado_vehiculo_id', 1);
+    }
 }

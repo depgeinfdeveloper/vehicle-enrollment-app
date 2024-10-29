@@ -46,9 +46,4 @@ class Intervencion extends Model
     {
         return $this->hasMany(IntervencionTripulante::class, 'intervencion_id', 'id');
     }
-
-    public function tiposDeUso()
-    {
-        return $this->hasMany(IntervencionTipoUsoDetalle::class, 'intervencion_id', 'id');
-    }
 }

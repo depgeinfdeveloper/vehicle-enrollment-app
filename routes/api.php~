@@ -26,8 +26,6 @@ Route::prefix('v1')->group(function () {
     Route::get('/intervention-crew-members/{intervention}', [IntervencionController::class, 'listCrewMembers']);
     Route::get('/intervention-use-details/{intervention}', [IntervencionController::class, 'listUseDetails']);
 
-    Route::get('/vehicle-formal', [VehiculoFormalController::class, 'listar']);
-
-    Route::get('/vehicle-formal/{placa}', [VehiculoFormalController::class, 'listByPlate']);
+    Route::get('/vehicle-formal', [VehiculoFormalController::class, 'list']);
 });
 
